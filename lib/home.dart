@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
             appBar: AppBar(),
             bottomNavigationBar: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
-              fixedColor: const Color(0xFF3A803C),
+              fixedColor: const Color(0xFF53B175) ,
               unselectedItemColor: Colors.black,
               currentIndex: cubit.currentIndex,
               onTap: (index) {
@@ -30,10 +30,10 @@ class HomePage extends StatelessWidget {
                     icon: SvgPicture.asset('assets/images/store.svg'),
                     label: 'Shop'),
                 BottomNavigationBarItem(
-                    icon: SvgPicture.asset('assets/images/explore.svg',color: Colors.black),
+                    icon: SvgPicture.asset('assets/images/explore.svg',color: Colors.black,),
                     label: 'Explore'),
                 BottomNavigationBarItem(
-                    icon: SvgPicture.asset('assets/images/cart.svg'),
+                    icon: SvgPicture.asset('assets/images/cartgreen.svg'),
                     label: 'Cart'),
                 BottomNavigationBarItem(
                     icon: SvgPicture.asset('assets/images/favorite.svg'),

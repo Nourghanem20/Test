@@ -56,13 +56,160 @@ class Beverages extends StatelessWidget {
               const SizedBox(
                 width: 67,
               ),
-              InkWell(onTap:(){},child: SvgPicture.asset('assets/images/plus.svg'))
+              InkWell(
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return SizedBox(
+                          width: 500,
+                          height: 500,
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 15,
+                                  ),
+                                  const Text(
+                                    'Add',
+                                    style: TextStyle(fontSize: 24,fontFamily: 'Poppins'),
+
+                                  ),
+                                  const SizedBox(
+                                    width: 260,
+                                  ),
+                                  SvgPicture.asset(
+                                    'assets/images/exit.svg',
+                                    color: Colors.black,
+                                  )
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 14,
+                              ),
+                              const Divider(
+                                indent: 10.0,
+                                endIndent: 20.0,
+                                thickness: 1,
+                              ),
+                              const Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Text('Name',
+                                      style: TextStyle(
+                                          color: Colors.grey, fontSize: 18,fontFamily: 'Poppins')),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 14,
+                              ),
+                              const Divider(
+                                indent: 10.0,
+                                endIndent: 20.0,
+                                thickness: 1,
+                              ),
+                              const Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Text('Description',
+                                      style: TextStyle(
+                                          color: Colors.grey, fontSize: 18,fontFamily: 'Poppins')),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 14,
+                              ),
+                              const Divider(
+                                indent: 10.0,
+                                endIndent: 20.0,
+                                thickness: 1,
+                              ),
+                              const Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Text('Price',
+                                      style: TextStyle(
+                                          color: Colors.grey, fontSize: 18,fontFamily: 'Poppins')),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 14,
+                              ),
+                              const Divider(
+                                indent: 10.0,
+                                endIndent: 20.0,
+                                thickness: 1,
+                              ),
+                               Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Text('Image',
+                                      style: TextStyle(
+                                          color: Colors.grey, fontSize: 18,fontFamily: 'Poppins')),
+                                  SizedBox(width: 230,),
+                                  IconButton(onPressed:(){}, icon:Icon(Icons.arrow_forward_ios_outlined ))
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 14,
+                              ),
+                              const Divider(
+                                indent: 10.0,
+                                endIndent: 20.0,
+                                thickness: 1,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Container(
+                                width: 300,
+                                height: 65,
+                                decoration: const BoxDecoration(
+                                  color: Color.fromARGB(255, 83, 177, 117),
+                                  borderRadius: BorderRadiusDirectional.only(
+                                      bottomEnd: Radius.circular(20),
+                                      bottomStart: Radius.circular(20),
+                                      topEnd: Radius.circular(20),
+                                      topStart: Radius.circular(20)),
+                                ),
+                                child: TextButton(
+                                    onPressed: () {},
+                                    child: const Text(
+                                      'Add Item',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18),
+                                    )),
+                              )
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: SvgPicture.asset('assets/images/plus.svg'))
             ],
           ),
           centerTitle: true),
       body: Container(
         padding: const EdgeInsetsDirectional.all(17),
         child: GridView.builder(
+          shrinkWrap: true,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 10,
@@ -99,7 +246,7 @@ class Beverages extends StatelessWidget {
                       Text(
                         beverages[index].title.toString(),
                         style: const TextStyle(
-                            fontSize: 14, fontFamily: 'Poppins'),
+                            fontSize: 12,fontWeight: FontWeight.bold, fontFamily: 'Poppins'),
                       ),
                     ],
                   ),
@@ -126,7 +273,7 @@ class Beverages extends StatelessWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: (){},
+                        onTap: () {},
                         child: SvgPicture.asset(
                           'assets/images/plus.svg',
                           width: 30.67,

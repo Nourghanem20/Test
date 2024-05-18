@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled13/beverages.dart';
 import 'package:untitled13/explore_model.dart';
 
 class Explore extends StatelessWidget {
@@ -42,6 +43,7 @@ class Explore extends StatelessWidget {
     return Container(
       padding: const EdgeInsetsDirectional.only(start: 10,end: 10),
       child: GridView.builder(
+        shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
