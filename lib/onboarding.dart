@@ -8,7 +8,7 @@ class OnBoarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/images/backGround.png'),
           fit: BoxFit.fill
@@ -23,18 +23,18 @@ class OnBoarding extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
 
             children: [
-              SizedBox(height: 300,),
+              const SizedBox(height: 300,),
               SvgPicture.asset('assets/images/logo.svg'),
-              Text('Welcome',
+              const Text('Welcome',
               style: TextStyle(color: Colors.white,fontSize: 48,
               fontFamily: 'Poppins'),
               ),
-              Text('to our store',
+              const Text('to our store',
                 style: TextStyle(color: Colors.white,fontSize: 48,fontFamily:'Poppins'),
               ),
-              Text('Ger your groceries in as fast as one hour',
+              const Text('Ger your groceries in as fast as one hour',
               style: TextStyle(fontSize: 16,color: Colors.grey),),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Container(
                 width: 300,
                 height: 65,
