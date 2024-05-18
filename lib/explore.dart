@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled13/beverages.dart';
-import 'package:untitled13/explore_model.dart';
+import 'package:untitled13/component/explore_model.dart';
 
 class Explore extends StatelessWidget {
   const Explore({Key? key}) : super(key: key);
