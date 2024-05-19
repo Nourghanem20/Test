@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:untitled13/component/button.dart';
 import 'package:untitled13/component/cart_model.dart';
+import 'package:untitled13/component/divider.dart';
+import 'package:untitled13/component/rowBottomSheet.dart';
 
 class Cart extends StatelessWidget {
   const Cart({Key? key}) : super(key: key);
@@ -39,10 +42,11 @@ class Cart extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsetsDirectional.only(start: 0, end: 0, top: 0),
+              padding:
+                  const EdgeInsetsDirectional.only(start: 0, end: 0, top: 0),
               height: kToolbarHeight,
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'My Cart',
                 style: TextStyle(
                   fontSize: 20,
@@ -50,7 +54,7 @@ class Cart extends StatelessWidget {
                 ),
               ),
             ),
-            Divider(),
+            const Divider(),
             Expanded(
               child: ListView.separated(
                 separatorBuilder: (context, index) => const Divider(),
@@ -61,7 +65,7 @@ class Cart extends StatelessWidget {
                     height: 96.98,
                     child: Row(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 6,
                         ),
                         const SizedBox(
@@ -72,7 +76,7 @@ class Cart extends StatelessWidget {
                           width: 72.39,
                           height: 65.04,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 25,
                         ),
                         Column(
@@ -83,25 +87,26 @@ class Cart extends StatelessWidget {
                               children: [
                                 Text(
                                   cart[index].title,
-                                  style: TextStyle(
-                                      fontSize: 16, fontWeight: FontWeight.bold),
+                                  style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 cart[index].title == 'Ginger'
-                                    ? SizedBox(width: 150)
-                                    : SizedBox(
+                                    ? const SizedBox(width: 150)
+                                    : const SizedBox(
                                         width: 80,
                                       ), //
                                 SvgPicture.asset('assets/images/exit.svg')
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             Text(
                               cart[index].quantity,
-                              style: TextStyle(color: Colors.grey),
+                              style: const TextStyle(color: Colors.grey),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             Row(
@@ -112,11 +117,11 @@ class Cart extends StatelessWidget {
                                   height: 40,
                                   width: 40,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 20,
                                 ),
                                 Text(cart[index].counter.toString()),
-                                SizedBox(
+                                const SizedBox(
                                   width: 20,
                                 ),
                                 SvgPicture.asset(
@@ -124,13 +129,14 @@ class Cart extends StatelessWidget {
                                   height: 40,
                                   width: 40,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 50,
                                 ),
                                 Text(
                                   cart[0].price,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold, fontSize: 18),
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18),
                                 )
                               ],
                             ),
@@ -148,180 +154,106 @@ class Cart extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Container(
-              width: 300,
-              height: 65,
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 83, 177, 117),
-                borderRadius: BorderRadiusDirectional.only(
-                    bottomEnd: Radius.circular(20),
-                    bottomStart: Radius.circular(20),
-                    topEnd: Radius.circular(20),
-                    topStart: Radius.circular(20)),
-              ),
-              child: TextButton(
-                  onPressed: () {
-                    showModalBottomSheet(
-                      context: context,
-                      builder: (context) {
-                        return SingleChildScrollView(
-                          child: SizedBox(
-                            height: 700,
-                            width: 500,
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 15,
-                                    ),
-                                    Text(
-                                      'Checkout',
-                                      style: TextStyle(fontSize: 24),
-                                    ),
-                                    SizedBox(
-                                      width: 200,
-                                    ),
-                                    SvgPicture.asset(
-                                      'assets/images/exit.svg',
-                                      color: Colors.black,
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Divider(
-                                  indent: 10.0,
-                                  endIndent: 20.0,
-                                  thickness: 1,
-                                ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 15,
-                                    ),
-                                    Text(
-                                      'Delivery',
-                                      style: TextStyle(
-                                          color: Colors.grey, fontSize: 18),
-                                    ),
-                                    SizedBox(
-                                      width: 120,
-                                    ),
-                                    Text(
-                                      'Select Method',
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                    IconButton(
-                                        onPressed: () {}, icon: Icon(Icons.arrow_forward_ios_outlined))
-                                  ],
-                                ),
-                                const Divider(
-                                  indent: 10.0,
-                                  endIndent: 20.0,
-                                  thickness: 1,
-
-                                ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 15,
-                                    ),
-                                    Text(
-                                      'Pament',
-                                      style: TextStyle(
-                                          color: Colors.grey, fontSize: 18),
-                                    ),
-                                    SizedBox(
-                                      width: 200,
-                                    ),
-                                    SvgPicture.asset('assets/images/visa.svg'),
-                                    IconButton(
-                                        onPressed: () {}, icon: Icon(Icons.arrow_forward_ios_outlined))
-                                  ],
-                                ),
-                                const Divider(
-                                  indent: 10.0,
-                                  endIndent: 20.0,
-                                  thickness: 1,
-                                ),
-                                Row(children: [
-                                  SizedBox(width: 15,),
-
-                                  Text('Promo Code',style: TextStyle(color: Colors.grey,fontSize: 18),),
-                                  SizedBox(width: 94,),
-                                  Text('Pick discount',style: TextStyle(fontSize: 16),),
-                                  IconButton(onPressed:(){}, icon:Icon(Icons.arrow_forward_ios_outlined))
-                                ],),
-                                const Divider(
-                                  indent: 10.0,
-                                  endIndent: 20.0,
-                                  thickness: 1,
-                                ),
-                                Row(children: [
-                                  SizedBox(width: 15,),
-
-                                  Text('Total Cost',style: TextStyle(color: Colors.grey,fontSize: 18),),
-                                  SizedBox(width: 160,),
-                                  Text('\$13.97',style: TextStyle(fontSize: 16),),
-                                  IconButton(onPressed:(){}, icon:Icon(Icons.arrow_forward_ios_outlined))
-                                ],),
-                                Divider(
-                                  indent: 10.0,
-                                  endIndent: 20.0,
-                                  thickness: 1,
-                                ),
-                                const Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    SizedBox(width: 10,),
-                                    Text('By placing an order you agree to our \n'
-                                      'Terms And Conditions',style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.grey
-                                    ),),
-                                  ],
-                                ),
-                                SizedBox(height: 10,),
-                                Container(
-                                  width: 300,
-                                  height: 65,
-                                  decoration: const BoxDecoration(
-                                    color: Color.fromARGB(255, 83, 177, 117),
-                                    borderRadius: BorderRadiusDirectional.only(
-                                        bottomEnd: Radius.circular(20),
-                                        bottomStart: Radius.circular(20),
-                                        topEnd: Radius.circular(20),
-                                        topStart: Radius.circular(20)),
+            buttonText(
+                title: 'Go to Checkout',
+                colorGround: const Color.fromARGB(255, 83, 177, 117),
+                colorTitle: Colors.white,
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return SingleChildScrollView(
+                        child: SizedBox(
+                          height: 700,
+                          width: 500,
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 15,
                                   ),
-                                  child: TextButton(
-                                      onPressed: () {
-
-                                      },
-                                      child: const Text(
-                                        'Place Order',
-                                        style: TextStyle(color: Colors.white, fontSize: 18),
-                                      )),
-                                )
-
-
-                              ],
-                            ),
+                                  const Text(
+                                    'Checkout',
+                                    style: TextStyle(fontSize: 24),
+                                  ),
+                                  const SizedBox(
+                                    width: 200,
+                                  ),
+                                  SvgPicture.asset(
+                                    'assets/images/exit.svg',
+                                    color: Colors.black,
+                                  )
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              divider(),
+                              bottomSheetRow(
+                                  title: 'Delivery',
+                                  titleSecond: 'Select Method'),
+                              divider(),
+                              Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 15,
+                                  ),
+                                  const Text(
+                                    'Pament',
+                                    style: TextStyle(
+                                        color: Colors.grey, fontSize: 18),
+                                  ),
+                                  const SizedBox(
+                                    width: 200,
+                                  ),
+                                  SvgPicture.asset('assets/images/visa.svg'),
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: const Icon(
+                                          Icons.arrow_forward_ios_outlined))
+                                ],
+                              ),
+                              divider(),
+                              bottomSheetRow(
+                                  title: 'Promo Code',
+                                  titleSecond: 'Pick discount'),
+                             divider(),
+                              bottomSheetRow(
+                                  title: 'Total Cost', titleSecond: '\$13.97'),
+                              divider(),
+                              const Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text(
+                                    'By placing an order you agree to our \n'
+                                    'Terms And Conditions',
+                                    style: TextStyle(
+                                        fontSize: 14, color: Colors.grey),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              buttonText(
+                                  title: 'Place Order',
+                                  colorGround:
+                                      const Color.fromARGB(255, 83, 177, 117),
+                                  colorTitle: Colors.white)
+                            ],
                           ),
-                        );
-                      },
-                    );
-                  },
-                  child: const Text(
-                    'Go to Checkout',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  )),
-            )
-
+                        ),
+                      );
+                    },
+                  );
+                })
           ],
         ),
       ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:untitled13/component/beverages_model.dart';
+import 'package:untitled13/component/button.dart';
+import 'package:untitled13/component/divider.dart';
 
 class Beverages extends StatelessWidget {
   const Beverages({Key? key}) : super(key: key);
@@ -76,8 +78,8 @@ class Beverages extends StatelessWidget {
                                   ),
                                   const Text(
                                     'Add',
-                                    style: TextStyle(fontSize: 24,fontFamily: 'Poppins'),
-
+                                    style: TextStyle(
+                                        fontSize: 24, fontFamily: 'Poppins'),
                                   ),
                                   const SizedBox(
                                     width: 260,
@@ -91,11 +93,7 @@ class Beverages extends StatelessWidget {
                               const SizedBox(
                                 height: 14,
                               ),
-                              const Divider(
-                                indent: 10.0,
-                                endIndent: 20.0,
-                                thickness: 1,
-                              ),
+                             divider(),
                               const Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -104,17 +102,15 @@ class Beverages extends StatelessWidget {
                                   ),
                                   Text('Name',
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 18,fontFamily: 'Poppins')),
+                                          color: Colors.grey,
+                                          fontSize: 18,
+                                          fontFamily: 'Poppins')),
                                 ],
                               ),
                               const SizedBox(
                                 height: 14,
                               ),
-                              const Divider(
-                                indent: 10.0,
-                                endIndent: 20.0,
-                                thickness: 1,
-                              ),
+                              divider(),
                               const Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -123,17 +119,15 @@ class Beverages extends StatelessWidget {
                                   ),
                                   Text('Description',
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 18,fontFamily: 'Poppins')),
+                                          color: Colors.grey,
+                                          fontSize: 18,
+                                          fontFamily: 'Poppins')),
                                 ],
                               ),
                               const SizedBox(
                                 height: 14,
                               ),
-                              const Divider(
-                                indent: 10.0,
-                                endIndent: 20.0,
-                                thickness: 1,
-                              ),
+                           divider(),
                               const Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -142,18 +136,16 @@ class Beverages extends StatelessWidget {
                                   ),
                                   Text('Price',
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 18,fontFamily: 'Poppins')),
+                                          color: Colors.grey,
+                                          fontSize: 18,
+                                          fontFamily: 'Poppins')),
                                 ],
                               ),
                               const SizedBox(
                                 height: 14,
                               ),
-                              const Divider(
-                                indent: 10.0,
-                                endIndent: 20.0,
-                                thickness: 1,
-                              ),
-                               Row(
+                              divider(),
+                              Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   SizedBox(
@@ -161,41 +153,29 @@ class Beverages extends StatelessWidget {
                                   ),
                                   Text('Image',
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 18,fontFamily: 'Poppins')),
-                                  SizedBox(width: 230,),
-                                  IconButton(onPressed:(){}, icon:Icon(Icons.arrow_forward_ios_outlined ))
+                                          color: Colors.grey,
+                                          fontSize: 18,
+                                          fontFamily: 'Poppins')),
+                                  SizedBox(
+                                    width: 230,
+                                  ),
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                          Icons.arrow_forward_ios_outlined))
                                 ],
                               ),
                               const SizedBox(
                                 height: 14,
                               ),
-                              const Divider(
-                                indent: 10.0,
-                                endIndent: 20.0,
-                                thickness: 1,
-                              ),
+                              divider(),
                               const SizedBox(
                                 height: 10,
                               ),
-                              Container(
-                                width: 300,
-                                height: 65,
-                                decoration: const BoxDecoration(
-                                  color: Color.fromARGB(255, 83, 177, 117),
-                                  borderRadius: BorderRadiusDirectional.only(
-                                      bottomEnd: Radius.circular(20),
-                                      bottomStart: Radius.circular(20),
-                                      topEnd: Radius.circular(20),
-                                      topStart: Radius.circular(20)),
-                                ),
-                                child: TextButton(
-                                    onPressed: () {},
-                                    child: const Text(
-                                      'Add Item',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 18),
-                                    )),
-                              )
+                              buttonText(
+                                  title: 'Add Item',
+                                  colorGround:const Color.fromARGB(255, 83, 177, 117),
+                                  colorTitle: Colors.white)
                             ],
                           ),
                         );
@@ -246,7 +226,9 @@ class Beverages extends StatelessWidget {
                       Text(
                         beverages[index].title.toString(),
                         style: const TextStyle(
-                            fontSize: 12,fontWeight: FontWeight.bold, fontFamily: 'Poppins'),
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Poppins'),
                       ),
                     ],
                   ),
